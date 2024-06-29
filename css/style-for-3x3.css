@@ -1,36 +1,11 @@
-*{
-    box-sizing: border-box;
-    margin:0;
-    padding:0;
-}
-html {
-    /* color: #333; */
-    /* chỉnh tỉ lệ để 1rem = 10px */
-    font-size: 62.5%;
-    font-family: "Pangolin", cursive;
-    font-weight: 400;
-    font-style: normal;
-}
-
-body
-{
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    margin:0;
-    background-color: rgba(2, 12, 72, 0.65);
-    background-image:url(./images/background.jpg);
-}
-
 
 /* css for game */
-.gameContainer
+.welcome-bar
 {
-    /* width:; */
-    /* height: 62rem; */
+    width:45%;
+    height: 65rem;
     margin: auto auto;
-    background-color: aliceblue;
-    
+    background-color: rgb(207, 233, 255);
     border-radius: 3px;
     box-shadow: 1px 1px 1px 5px rgba(0, 179, 255, 0.2), -1px -1px 1px 5px rgba(0, 179, 255, 0.2);
     text-align: center;
@@ -39,16 +14,15 @@ body
   
 }
 
-.game-heading
+.game__heading
 {
     /* margin:1.6rem 0; */
     padding: 3.2rem 2rem 0;
-
     font-size:5.2rem;
 }
 
 /* css for grid */
-.game-grid
+.game__grid
 {
     margin-top:5.2rem;
     display:grid;
@@ -74,10 +48,18 @@ body
 
 
 /* footer game */
-.game-status
+.status-container
 {
+    display: block;
     margin-top:3.2rem;
-    font-size:2.4rem;
+    height: 4rem;
+    line-height: 4rem;
+    text-align: center;
+}
+.game__status
+{
+    font-size:3.2rem;
+
 }
 
 .restartBtn
@@ -102,14 +84,41 @@ body
     padding:1.3rem 2.7rem;
 }
 
-@media only screen and (max-width: 739px)
+@media (max-width: 739px)
 {
     body{
-        font-size:50%;
+        font-size:40%;
+        /* color:red; */
     };
 
-    .gameContainer
+    .game__heading
     {
-        margin: 1rem 0.5rem;
+        padding-top: 1.6rem;
+        font-size:3rem;
+        /* color:red; */
+    }
+
+    .welcome-bar
+    {
+        /* margin:auto;  */
+        /* margin:0; */
+        width: 94%;
+        height: 68rem;
     }
 }
+
+@media (max-width: 1023px) and (min-width: 740px)
+{
+    body{
+        font-size:60%;
+        /* color:red; */
+    }
+
+    .welcome-bar
+    {
+        margin: auto;
+        width: 62%;
+        height: 66rem;
+    }
+}
+

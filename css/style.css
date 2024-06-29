@@ -1,0 +1,137 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+html {
+    /* color: #333; */
+    /* chỉnh tỉ lệ để 1rem = 10px */
+    font-size: 62.5%;
+    font-family: "Pangolin", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body
+{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    margin:0;
+    background-color: rgba(2, 12, 72, 0.65);
+    background-image:url(../images/background.jpg);
+}
+
+/* CSS cho cac thanh phan */
+
+.hide
+{
+    display: none;
+}
+
+.wrap-btn
+{
+    width: 100%;
+    height: 4.4rem;
+    margin:2rem auto 2rem;
+}
+.btn
+{
+
+    padding:1rem 2rem;
+    width: 16rem;
+    font-size:1.6rem;
+    /* background-color: rgba(255, 119, 55, 0.945); */
+    /* color:white; */
+    border-radius: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    outline: none;
+    transition: backgroundcolor linear 0.2s, color linear 0.2s, border linear 0.2s;
+}
+
+.btn:hover
+{
+    cursor:pointer;
+    background-color: rgba(255, 118, 55, 0.825);
+    color:white;
+    border: 2px solid rgb(110, 110, 110);
+    padding:1.2rem 2.2rem;
+}
+/* css for welcom bar */
+.wrap__choose-bar-heading
+{
+    margin:0 auto;
+    height: 3rem;
+    width: 100%;
+}
+.welcome-mess
+{
+    margin-top:1.2rem;
+    font-size: 2.4rem;
+    transition: font-size linear 0.1s;
+}
+.welcome-mess:hover
+{
+    font-size:2.8rem;
+}
+
+/* css for choose player */
+.choose-bar
+{
+    padding:0 0 2rem;
+    display: block;
+    margin:15% auto 0;
+    width:50%;
+    /* height: 24rem; */
+    background-color: rgba(97, 105, 198, 0.649);
+    border-radius: 3px;
+  
+}
+
+.choose-bar__heading
+{
+    font-size:2.4rem;
+    padding:3.2rem 0 1rem;
+    /* margin-bottom:2rem; */
+}
+
+
+
+@media (max-width: 739px)
+{
+
+    .choose-bar
+    {
+        width: 70%;
+        margin:15% auto 0;
+    }
+}
+
+@media (max-width: 1023px) and (min-width: 740px)
+{
+ 
+
+    .welcome-bar
+    {
+        margin: auto;
+        width: 76%;
+        height: 70rem;
+    }
+}
+
+@media (min-width:1024px) and (max-width:1190px)
+{
+    .welcome-bar
+    {
+        /* margin:auto;  */
+        /* margin:0; */
+        width: 70%;
+        height: 68rem;
+    }
+
+    .choose-bar
+    {
+        width: 50%;
+        margin:15% auto 0;
+    }
+}   

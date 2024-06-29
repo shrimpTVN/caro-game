@@ -4,30 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shrimp Dev</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/style-for-3x3.css">
+    <link rel="stylesheet" href="./css/style.css">
+ 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="gameContainer">
-        <h1 class="game-heading">Tic Tac Toe  Game</h1>
-        <div class="game-grid">
-            <div id="0" class="cell styleHover"></div>
-            <div id="1" class="cell styleHover"></div>
-            <div id="2" class="cell styleHover"></div>
-            <div id="3" class="cell styleHover"></div>
-            <div id="4" class="cell styleHover"></div>
-            <div id="5" class="cell styleHover"></div>
-            <div id="6" class="cell styleHover"></div>
-            <div id="7" class="cell styleHover"></div>
-            <div id="8" class="cell styleHover"></div>
+  <div class="welcome-bar">
+
+    <h1 class="game__heading">Tic Tac Toe  Game</h1>      
+    
+    <!-- container game 3x3 -->
+    <div class="gameContainer-3x3 hide">
+      <div class="game__grid">
+          <div id="0" class="cell styleHover"></div> 
+          <div id="1" class="cell styleHover"></div>
+          <div id="2" class="cell styleHover"></div>
+          <div id="3" class="cell styleHover"></div>
+          <div id="4" class="cell styleHover"></div>
+          <div id="5" class="cell styleHover"></div>
+          <div id="6" class="cell styleHover"></div>
+          <div id="7" class="cell styleHover"></div>
+          <div id="8" class="cell styleHover"></div>
+      </div>
+
+      <div class="status-container">
+        <h2 class="game__status"> Let's start! </h2>
+      </div>
+      
+      <button class="restartBtn">Restart</button>
+
+    </div>
+
+    <!-- choose bar -->
+    <div class="choose-mode">
+      <div class="wrap__choose-bar-heading">
+        <h2 class="welcome-mess">Welcome to Tic Tac Toe game!!!</h2>
+      </div>
+
+      <div class="choose-bar">
+        <!-- choose player bar -->
+
+        <div class="choose-player">
+          <h3 class="choose-bar__heading">Chọn đối thủ sẽ chơi với bạn</h3>
+          <div class="wrap-btn">
+            <button class="btn" id="choose-player__personBtn">Chơi với Người</button>
+          </div>
+          <div class="wrap-btn">
+            <button class="btn" id="choose-player__botBtn" >Chơi với Máy</button>
+          </div>
+        </div>
+          
+        <div class="choose-map hide">
+          <h3 class="choose-bar__heading">Chọn kích thước bàn cờ </h3>
+          <div class="wrap-btn">
+            <button class="btn" id="choose-map__map3x3-Btn">Bàn cờ 3x3</button>
+          </div>
+          <div class="wrap-btn">
+            <button class="btn"  id="choose-map__map16x16-Btn">Bàn cờ 16x16</button>
+          </div>
+          <div class="wrap-btn">
+            <button class="btn" id="choose-bar__undleBtn">Trở lại</button>
+          </div>
         </div>
 
-        <h2 class="game-status">Let's start!</h2>
-        <button class="restartBtn">Restart</button>
+        <div class="choose-start hide">
+          <h3 class="choose-bar__heading">Bạn đã sẵn sàng để bắt đầu?</h3>
+          <div class="wrap-btn">
+            <button class="btn" id="choose-bar__undleBtn">Trở lại</button>
+          </div>
+          <div class="wrap-btn">
+            <button class="btn"  id="choose-bar__start">Bắt đầu</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
   </div>
-  <script src="./index.js"></script>
+  <script  src="./rule-3x3-off.js"></script>
+  
+  <script  src="./index.js">
+  
+  </script>
+
+  
 </body>
 </html>

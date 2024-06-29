@@ -1,110 +1,62 @@
-// get Element
-
-const cells= document.querySelectorAll(".cell");
-const gameStatus= document.querySelector(".game-status");
-const restartBtn=document.querySelector(".restartBtn");
-
-let gameRunning= false;
-let status="Let's start";
-let currentPlayer='';
-let roundGame=["", "", "" ,"" ,"", "", "", "" ,"" ];
-let winCondition =
-    [
-        [0, 1, 2],
-        [3, 4, 5],
-        [6, 7 ,8],
-        [0, 3, 6],
-        [1, 4, 7],
-        [2, 5, 8],
-        [0, 4, 8],
-        [2, 4, 6]
-    ]
-// initialize the Game
-initialize();
-
-function initialize()
+var chooseMode = document.querySelector('.choose-mode'),
+chooseBar =  chooseMode.querySelector('.choose-bar');
+getChoose();
+// listen choose-bar
+function getChoose()
 {
-    gameRunning=true;
-    currentPlayer="X";
-    gameStatus.textContent=`${currentPlayer}'s turn`;
-    cells.forEach(function (element)
+    var playerChosen = {};
+    function checkPlayerChoose( chooseMenu, chooseNextMenu)
     {
-        element.addEventListener('click',playerClicked);
-      
-    });
-    
-    restartBtn.addEventListener('click',restartGame);
+        var choosePlayerBtns = chooseMenu.querySelectorAll(".btn");
+        Array.from(choosePlayerBtns).forEach(function(element, index)
+                {
+                        element.onclick = function (event)
+                        {
+                            if (this.id=='choose-bar__undleBtn')
+                                reset(chooseMenu);
+
+                            playerChosen[chooseMenu.className] = this.id;
+                            chooseMenu.classList.add('hide');
+
+                            if (chooseNextMenu)
+                                chooseNextMenu.classList.remove('hide');
+                            else
+                                 drawMap(playerChosen);
+
+                        }
+                }); 
+    }
+
+    var choosePlayer =  chooseBar.querySelector('.choose-player');
+    var chooseMap =  chooseBar.querySelector('.choose-map');
+    var chooseStart =  chooseBar.querySelector('.choose-start');
+
+    checkPlayerChoose(choosePlayer, chooseMap);
+    checkPlayerChoose(chooseMap, chooseStart);
+    checkPlayerChoose(chooseStart, undefined);
+  
 }
 
-function playerClicked()
+function drawMap( playerChosen)
 {
-    if (!gameRunning || this.innerHTML!=="")
-            return;
-    this.classList.remove("styleHover");
-    
-    this.innerHTML=currentPlayer;
-    roundGame[this.id]=currentPlayer;
-    checkWinner();
-}
-
-function changePlayer()
-{
-    currentPlayer= currentPlayer==="X" ? "O" : "X";
-    gameStatus.textContent=`${currentPlayer}'s turn`;
-}
-
-function checkWinner()
-{
-    var haveWinner=false;
-    for (var i=0; i<winCondition.length ; i++)
-    {
-        let pos=winCondition[i];
-        let cellOne=roundGame[pos[0]], cellTwo=roundGame[pos[1]], cellThree=roundGame[pos[2]];
-        
-        if (cellOne==="" || cellTwo==="" || cellThree==="")
-                continue;
-        
-        if (cellOne===cellTwo && cellTwo===cellThree)
+    if (playerChosen['choose-player'] == 'choose-player__personBtn' &&  
+        playerChosen['choose-map'] == 'choose-map__map3x3-Btn' && 
+        playerChosen['choose-start'] == 'choose-bar__start')
         {
-           haveWinner=true;
-            break;
+            chooseMode.classList.add('hide');
+            var gameBoard = document.querySelector('.gameContainer-3x3');
+            gameBoard.classList.remove('hide');    
+            run_33_off_rule();
         }
-    }
-
-    
-    if (haveWinner)
-    {
-        gameStatus.textContent = `${currentPlayer}'s win! Congratulate!!!`;
-        gameRunning= false;
-        console.log(gameStatus.textContent);
-       
-    }
-    else
-    if (!roundGame.includes(""))
-    {
-        gameRunning=false;
-        gameStatus.textContent="Draw!";
-    }
-    else
-    {
-        changePlayer();
-    }
 }
 
-function restartGame()
+function reset( currentMenu)
 {
-    //initialize roundGame
-    roundGame.fill("");
-
-    //clear grid game
-    cells.forEach(function (element)
-    {
-        element.innerHTML="";
-        element.classList.add("styleHover");
-    });
-
-    currentPlayer='X';
-    gameStatus.textContent=`${currentPlayer}'s turn`;
-    gameRunning=true;
-    
+    currentMenu.classList.add('hide');
+    var choosePlayerMenu =  chooseBar.querySelector('.choose-player');
+    choosePlayerMenu.classList.remove('hide');
 }
+
+
+
+
