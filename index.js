@@ -13,16 +13,18 @@ function getChoose()
                         element.onclick = function (event)
                         {
                             if (this.id=='choose-bar__undleBtn')
+                            {
                                 reset(chooseMenu);
-
-                            playerChosen[chooseMenu.className] = this.id;
-                            chooseMenu.classList.add('hide');
-
-                            if (chooseNextMenu)
-                                chooseNextMenu.classList.remove('hide');
-                            else
-                                 drawMap(playerChosen);
-
+                                return;
+                            }
+                                playerChosen[chooseMenu.className] = this.id;
+                                chooseMenu.classList.add('hide');
+    
+                                if (chooseNextMenu)
+                                    chooseNextMenu.classList.remove('hide');
+                                else
+                                     drawMap(playerChosen);
+                            
                         }
                 }); 
     }
@@ -39,14 +41,24 @@ function getChoose()
 
 function drawMap( playerChosen)
 {
-    if (playerChosen['choose-player'] == 'choose-player__personBtn' &&  
-        playerChosen['choose-map'] == 'choose-map__map3x3-Btn' && 
+    if (playerChosen['choose-map'] == 'choose-map__map3x3-Btn' && 
         playerChosen['choose-start'] == 'choose-bar__start')
         {
             chooseMode.classList.add('hide');
             var gameBoard = document.querySelector('.gameContainer-3x3');
-            gameBoard.classList.remove('hide');    
-            run_33_off_rule();
+            gameBoard.classList.remove('hide');   
+            
+            // check rule for game
+            if (playerChosen['choose-player'] == 'choose-player__personBtn' )
+                {
+                    game_rule_3_3_off();
+                }
+            else
+            if (playerChosen['choose-player'] == 'choose-player__botBtn' )
+                {
+                    game_rule_3_3_vsBot();
+                }
+
         }
 }
 

@@ -10,14 +10,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+
 </head>
 <body>
+
+
+  
   <div class="welcome-bar">
 
     <h1 class="game__heading">Tic Tac Toe  Game</h1>      
     
     <!-- container game 3x3 -->
-    <div class="gameContainer-3x3 hide">
+    <div class="gameContainer-3x3 hide ">
+
       <div class="game__grid">
           <div id="0" class="cell styleHover"></div> 
           <div id="1" class="cell styleHover"></div>
@@ -39,7 +44,7 @@
     </div>
 
     <!-- choose bar -->
-    <div class="choose-mode">
+    <div class="choose-mode ">
       <div class="wrap__choose-bar-heading">
         <h2 class="welcome-mess">Welcome to Tic Tac Toe game!!!</h2>
       </div>
@@ -53,7 +58,7 @@
             <button class="btn" id="choose-player__personBtn">Chơi với Người</button>
           </div>
           <div class="wrap-btn">
-            <button class="btn" id="choose-player__botBtn" >Chơi với Máy</button>
+            <button class="btn" id="choose-player__botBtn">Chơi với Máy</button>
           </div>
         </div>
           
@@ -63,7 +68,7 @@
             <button class="btn" id="choose-map__map3x3-Btn">Bàn cờ 3x3</button>
           </div>
           <div class="wrap-btn">
-            <button class="btn"  id="choose-map__map16x16-Btn">Bàn cờ 16x16</button>
+            <button class="btn"  id="choose-map__map16x16-Btn" disabled>Bàn cờ 16x16</button>
           </div>
           <div class="wrap-btn">
             <button class="btn" id="choose-bar__undleBtn">Trở lại</button>
@@ -84,10 +89,9 @@
     </div>
 
   </div>
-  <script  src="./rule-3x3-off.js"></script>
+  <script  src="./rule-3x3.js"></script>
   
   <script  src="./index.js">
-  
   </script>
 
   

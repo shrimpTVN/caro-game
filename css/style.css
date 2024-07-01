@@ -29,6 +29,10 @@ body
     display: none;
 }
 
+.winState
+{
+    background-color: rgb(240, 240, 240);
+}
 .wrap-btn
 {
     width: 100%;
