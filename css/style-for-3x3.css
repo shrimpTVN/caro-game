@@ -17,7 +17,7 @@
 .game__heading
 {
     /* margin:1.6rem 0; */
-    padding: 3.2rem 2rem 0;
+    padding: 3.2rem 2.8rem 0;
     font-size:5.2rem;
 }
 
@@ -86,10 +86,10 @@
 
 @media (max-width: 739px)
 {
-    body{
+    /* body{
         font-size:40%;
-        /* color:red; */
-    };
+        color:red;
+    } */
 
     .game__heading
     {
@@ -109,10 +109,10 @@
 
 @media (max-width: 1023px) and (min-width: 740px)
 {
-    body{
+    /* body{
         font-size:60%;
-        /* color:red; */
-    }
+        
+    } */
 
     .welcome-bar
     {

@@ -58,10 +58,30 @@ body
     cursor:pointer;
     background-color: rgba(255, 118, 55, 0.825);
     color:white;
-    border: 2px solid rgb(110, 110, 110);
+    border: 2px solid rgb(180, 180, 180);
     padding:1.2rem 2.2rem;
 }
 /* css for welcom bar */
+.welcome-bar__home-btn
+{
+  position: absolute;
+
+}
+
+.home-icon
+{
+    color:rgb(121, 121, 121);
+    font-size:4rem;
+    padding:1rem 1rem;
+}
+
+.home-icon:hover
+{
+    color:rgb(140, 140, 140);
+    font-size:4.2 rem;
+    transition: font-size linear 0.2s;
+}
+
 .wrap__choose-bar-heading
 {
     margin:0 auto;

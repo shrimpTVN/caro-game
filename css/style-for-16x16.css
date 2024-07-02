@@ -1,0 +1,135 @@
+.game_container_16
+{
+    width:60%;
+    /* height: 80rem; */
+    padding:1rem 0 3rem;
+    margin: auto auto;
+    background-color: rgb(215, 236, 255);
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px 5px rgba(0, 179, 255, 0.2), -1px -1px 1px 5px rgba(0, 179, 255, 0.2);
+    text-align: center;
+    
+    
+}
+
+/* css for head */
+.game-16__heading
+{   
+    font-size:3.8rem;
+    margin-top: 2.2rem;
+}
+
+/* css for body */
+/* css for game grid */
+.game-16__grid
+{
+    margin: 2.2rem auto 0;
+    /* width: 60rem;
+    height: 60rem;
+    background-color: blue; */
+    display: grid;
+    grid-template-columns: repeat(16,auto);
+    justify-content: center;
+    
+
+
+}
+
+.cell-small
+{
+    font-size: 3.2em;
+    cursor: pointer;
+    text-align: center;
+    width: 1.2em;
+    height: 1.2em;
+    line-height: 1.2em;
+    border:1px solid rgb(0, 0, 0, 0.7);
+    box-shadow: 0 0 0 1px rgb(0, 0, 0, 0.7);
+    background-color: rgba(240, 248, 255, 0.6);
+    color: black;
+    user-select: none;
+}
+.cell-small.styleHover:hover
+{
+    background-color: rgba(255, 102, 0, 0.5); ;
+}
+
+.cell-small.winState
+{
+    background-color: rgba(32, 255, 129, 0.701);
+}
+/* css for bottom */
+.game-16__status
+{
+    margin-top:2.2rem;
+    font-size: 2.4rem;
+}
+
+.wrap-restartBtn
+{
+    height: 5rem;
+    width: 14rem;
+    margin: 1.4rem auto 0;
+    text-align: center;
+}
+
+.game-16__restartBtn
+{
+    margin:auto;
+    outline: none;
+    padding:1rem 3rem;
+    font-size:1.4rem;
+    font-weight: bold;
+    background-color: hsl(160, 100%, 68%);
+    color:rgb(58, 41, 0);
+    border-radius: 50px;
+    transition: all linear 0.1s;
+}
+
+.game-16__restartBtn:hover
+{
+    cursor: pointer;
+    padding:1.1rem 3.1rem;
+    font-size:1.5rem;
+    background-color: hsl(160, 100%, 78%);
+}
+
+ @media (max-width: 739px)
+ {
+    .game_container_16
+    {
+        width: 100%;
+        /* height: 90%; */
+    }
+    .cell-small
+    {
+        font-size: 1.8em;
+    }
+ }
+
+ @media (min-width: 740px) and (max-width: 1023px)
+ {
+
+    .game_container_16
+    {
+        width: 80%;
+        /* height: 90%; */
+    }
+    .cell-small
+    {
+        font-size: 2.8em;
+    }
+ }
+
+ @media (min-width:1024px) and (max-width: 1113px)
+ {
+    .game_container_16
+    {
+        width: 70%;
+        /* height: 90%; */
+    }
+    .cell-small
+    {
+        font-size: 3em;
+    }
+ }
