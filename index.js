@@ -4,7 +4,7 @@ var chooseMode = document.querySelector(".choose-mode"),
 getChoose();
 
 // game_rule_33(true);
-game_rule_16(true);
+// game_rule_16(true);
 
 // listen choose-bar
 function getChoose() {
