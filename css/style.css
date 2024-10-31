@@ -104,7 +104,7 @@ body
 {
     padding:0 0 2rem;
     display: block;
-    margin:15% auto 0;
+    margin: 12rem auto 0;
     width:50%;
     /* height: 24rem; */
     background-color: rgba(97, 105, 198, 0.649);
@@ -126,8 +126,15 @@ body
 
     .choose-bar
     {
-        width: 70%;
-        margin:15% auto 0;
+        width: 75%;
+        margin:12rem auto 0;
+    }
+
+    .welcome-bar
+    {
+        margin: auto;
+        width: 96%;
+        height: 60rem;
     }
 }
 
@@ -139,7 +146,7 @@ body
     {
         margin: auto;
         width: 76%;
-        height: 70rem;
+        height: 60rem;
     }
 }
 
@@ -150,12 +157,12 @@ body
         /* margin:auto;  */
         /* margin:0; */
         width: 70%;
-        height: 68rem;
+        height: 60rem;
     }
 
     .choose-bar
     {
         width: 50%;
-        margin:15% auto 0;
+        margin:20% auto 0;
     }
 }   

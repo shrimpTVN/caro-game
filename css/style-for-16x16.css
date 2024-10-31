@@ -2,7 +2,7 @@
 {
     width:60%;
     /* height: 80rem; */
-    padding:1rem 0 3rem;
+    padding:1rem 0 1rem;
     margin: auto auto;
     background-color: rgb(215, 236, 255);
     border-radius: 3px;
@@ -16,19 +16,19 @@
 .game-16__heading
 {   
     font-size:3.8rem;
-    margin-top: 2.2rem;
+    margin-top: 0.7rem;
 }
 
 /* css for body */
 /* css for game grid */
 .game-16__grid
 {
-    margin: 2.2rem auto 0;
+    margin: 0.7rem auto 0;
     /* width: 60rem;
     height: 60rem;
     background-color: blue; */
     display: grid;
-    grid-template-columns: repeat(16,auto);
+    grid-template-columns: repeat(16 , auto);
     justify-content: center;
     
 
@@ -37,7 +37,7 @@
 
 .cell-small
 {
-    font-size: 3.2em;
+    font-size: 2.6em;
     cursor: pointer;
     text-align: center;
     width: 1.2em;
@@ -61,7 +61,7 @@
 /* css for bottom */
 .game-16__status
 {
-    margin-top:2.2rem;
+    margin-top:1.2rem;
     font-size: 2.4rem;
 }
 
@@ -69,7 +69,7 @@
 {
     height: 5rem;
     width: 14rem;
-    margin: 1.4rem auto 0;
+    margin: 1rem auto 0;
     text-align: center;
 }
 
@@ -117,7 +117,7 @@
     }
     .cell-small
     {
-        font-size: 2.8em;
+        font-size: 2.5em;
     }
  }
 
@@ -130,6 +130,6 @@
     }
     .cell-small
     {
-        font-size: 3em;
+        font-size: 2.5em;
     }
  }

@@ -1,6 +1,10 @@
 var chooseMode = document.querySelector('.choose-mode'),
 chooseBar =  chooseMode.querySelector('.choose-bar');
 getChoose();
+
+// game_rule_33(true);
+game_rule_16(true);
+
 // listen choose-bar
 function getChoose()
 {
@@ -68,9 +72,19 @@ function drawMap( playerChosen)
     {
         var welcomBoar = document.querySelector('.welcome-bar');
         welcomBoar.classList.add('hide');
-        var gameBoard = document.querySelector('.game_container_16_16');
+        var gameBoard = document.querySelector('.game_container_16');
         gameBoard.classList.remove('hide');   
-        
+
+            // check rule for game
+        if (playerChosen['choose-player'] == 'choose-player__personBtn' )
+            {
+                game_rule_16(false);
+            }
+        else
+        if (playerChosen['choose-player'] == 'choose-player__botBtn' )
+            {
+                game_rule_16(true);
+            }
         
     }
 }

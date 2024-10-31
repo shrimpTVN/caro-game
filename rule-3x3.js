@@ -180,65 +180,73 @@ function game_rule_33(activeBot)
 
     function botAction()
     {
+    
     let aiMark = 'O', huMark = 'X';
+    var availidCellsIndexes = getAllEmptyCellsIndexes(gameBoard);
+    var count = 0;
 
 
-    function minimax(currBoard, currMark)
+    function minimax(currBoard, currMark , depth, alpha, beta)
     {
-        var availidCellsIndexes = getAllEmptyCellsIndexes(currBoard);
+        // console.log(count++);
+        count++;
+      
         if (findWinner(currBoard, aiMark) !=null)
             {
-                return { score: 10};
+                return { score: 1000 - depth};
             }
         if (findWinner(currBoard, huMark) != null)
             {
-                return { score: -10};
+                return { score: depth - 1000};
             }
         else
-        if (availidCellsIndexes.length == 0)
+        if (availidCellsIndexes.length == depth)
             {
                 return { score: 0};
             }
         const testPlayInfos = [];
-        for (var i=0 ; i < availidCellsIndexes.length; i++)
+        for (var i = 0 ; i < availidCellsIndexes.length; i++)
             {
             
-                var currTestPlayInfo = {
-                    index: '0',
-                    score: '0'
-                };
+                var currTestPlayInfo = {};
                 currTestPlayInfo.index = currBoard[availidCellsIndexes[i]];
                 currBoard[availidCellsIndexes[i]] = currMark;
 
                 if (currMark === aiMark)
                     {
-                        var result = {
-                            score: '0',
-                            index: '0'
-                        };
-                    result = minimax(currBoard, huMark);
+                        var result = {};
+                    result = minimax(currBoard, huMark, depth+1,  alpha, beta);
                     currTestPlayInfo.score = result.score;    
+                    alpha  = Math.max(alpha, result.score);
+                 
+    
                     }
                 else
                 if ( currMark === huMark)
                     {
-                        var result = {
-                            score: '0',
-                            index: '0'
-                        };
-                        result = minimax(currBoard, aiMark);
+                        var result = {};
+                        result = minimax(currBoard, aiMark, depth+1, alpha, beta);
                         currTestPlayInfo.score = result.score;   
+                        beta  = Math.min(beta, result.score);
+
+                       
+        
                     }
 
                 currBoard[availidCellsIndexes[i]] = currTestPlayInfo.index;
                 testPlayInfos.push(currTestPlayInfo);
+                
+                if (alpha >= beta)
+                    break;
+            
+
             }
 
         // bestIndex store the index of best score for current player
         let bestIndex = null , bestScore;
         if (currMark  === aiMark)
         {
-            bestScore = -10000;
+            bestScore = -1e9;
             for (var i = 0; i < testPlayInfos.length ;i++)
                 if (testPlayInfos[i].score > bestScore)
                 {
@@ -248,7 +256,7 @@ function game_rule_33(activeBot)
         }
         else
         {
-            bestScore = 10000;
+            bestScore = 1e9;
             for (var i = 0; i < testPlayInfos.length ;i++)
             {
                 if (testPlayInfos[i].score < bestScore)
@@ -262,8 +270,10 @@ function game_rule_33(activeBot)
         return testPlayInfos[bestIndex];
     }
     
-    var cellBotChosen = minimax(gameBoard, aiMark);
 
+    var cellBotChosen = minimax(gameBoard, aiMark, 0, -Infinity, +Infinity);
+    console.log(count);
+    console.log(cellBotChosen);
     choose(cells[cellBotChosen.index]);
     }
 
